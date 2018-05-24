@@ -88,18 +88,15 @@ public class Ventana extends JFrame {
                 boolean n = aa.matches(regex);
                 boolean m = bb.matches(regex);
                 if (n && m) {
-                                        System.out.println("buuuuu");
-
                     int a = Integer.parseInt(aa);
                     int b = Integer.parseInt(bb);
 
                     caja2.setText(oper.operar(a, b));
+                } else {
+
+                    JOptionPane.showMessageDialog(rootPane, "SINTAXIS INCORRECTA, INGRESE ENTEROS");
                 }
-                else{
-                    System.out.println("MUERE");
-                JOptionPane.showMessageDialog(rootPane, "IDIOT");
-                }
-                
+
             }
         });
 
@@ -108,10 +105,20 @@ public class Ventana extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 factory = Productor.getProductor("aritmetica");
                 Operaciones oper = factory.getOperaciones("restar");
-                int a = Integer.parseInt(caja1.getText());
-                int b = Integer.parseInt(caja3.getText());
-                caja2.setText(oper.operar(a, b));
+                String aa = caja1.getText();
+                String bb = caja3.getText();
 
+                boolean n = aa.matches(regex);
+                boolean m = bb.matches(regex);
+                if (n && m) {
+                    int a = Integer.parseInt(aa);
+                    int b = Integer.parseInt(bb);
+
+                    caja2.setText(oper.operar(a, b));
+                } else {
+
+                    JOptionPane.showMessageDialog(rootPane, "SINTAXIS INCORRECTA, INGRESE ENTEROS");
+                }
             }
         });
 
@@ -120,9 +127,20 @@ public class Ventana extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 factory = Productor.getProductor("aritmetica");
                 Operaciones oper = factory.getOperaciones("multiplicar");
-                int a = Integer.parseInt(caja1.getText());
-                int b = Integer.parseInt(caja3.getText());
-                caja2.setText(oper.operar(a, b));
+                String aa = caja1.getText();
+                String bb = caja3.getText();
+
+                boolean n = aa.matches(regex);
+                boolean m = bb.matches(regex);
+                if (n && m) {
+                    int a = Integer.parseInt(aa);
+                    int b = Integer.parseInt(bb);
+
+                    caja2.setText(oper.operar(a, b));
+                } else {
+
+                    JOptionPane.showMessageDialog(rootPane, "SINTAXIS INCORRECTA, INGRESE ENTEROS");
+                }
 
             }
         });
@@ -132,10 +150,20 @@ public class Ventana extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 factory = Productor.getProductor("aritmetica");
                 Operaciones oper = factory.getOperaciones("dividir");
-                int a = Integer.parseInt(caja1.getText());
-                int b = Integer.parseInt(caja3.getText());
-                caja2.setText(oper.operar(a, b));
+                String aa = caja1.getText();
+                String bb = caja3.getText();
 
+                boolean n = aa.matches(regex);
+                boolean m = bb.matches(regex);
+                if (n && m) {
+                    int a = Integer.parseInt(aa);
+                    int b = Integer.parseInt(bb);
+
+                    caja2.setText(oper.operar(a, b));
+                } else {
+
+                    JOptionPane.showMessageDialog(rootPane, "SINTAXIS INCORRECTA, INGRESE ENTEROS");
+                }
             }
         });
 
@@ -144,24 +172,34 @@ public class Ventana extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 factory = Productor.getProductor("convertir");
                 Convertir conver = factory.getConvertir("binario");
-                int a = Integer.parseInt(caja1.getText());
-                caja2.setText(conver.convertidor(a));
+
+                String aa = caja1.getText();
+
+                boolean n = aa.matches(regex);
+
+                if (n) {
+                    int a = Integer.parseInt(aa);
+
+                    caja2.setText(conver.convertidor(a));
+                } else {
+
+                    JOptionPane.showMessageDialog(rootPane, "SINTAXIS INCORRECTA, INGRESE ENTERO EN PRIMERA CAJA");
+                }
 
             }
         });
 
-        suma.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                factory = Productor.getProductor("aritmetica");
-                Operaciones oper = factory.getOperaciones("suma");
-                int a = Integer.parseInt(caja1.getText());
-                int b = Integer.parseInt(caja3.getText());
-                caja2.setText(oper.operar(a, b));
-
-            }
-        });
-
+//        suma.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                factory = Productor.getProductor("aritmetica");
+//                Operaciones oper = factory.getOperaciones("suma");
+//                int a = Integer.parseInt(caja1.getText());
+//                int b = Integer.parseInt(caja3.getText());
+//                caja2.setText(oper.operar(a, b));
+//
+//            }
+//        });
         setSize(370, 400);
     }
 
